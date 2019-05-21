@@ -31,7 +31,7 @@ class TestCppCheck(unittest.TestCase):
         self.reportFilename = self.WEBOTS_HOME + '/tests/cppcheck_report.txt'
 
         self.cppcheck = 'cppcheck'
-        if 'TRAVIS' in os.environ:
+        if 'TRAVIS' in os.environ and 'TRAVIS_OS_NAME' in os.environ and os.environ['TRAVIS_OS_NAME'] == 'linux':
             self.cppcheck = self.WEBOTS_HOME + '/tests/sources/bin/cppcheck'
 
         self.includeDirs = [
@@ -114,8 +114,7 @@ class TestCppCheck(unittest.TestCase):
         if os.path.isfile(self.reportFilename):
             os.remove(self.reportFilename)
 
-        if 'TRAVIS' not in os.environ:
-            os.system(command)
+        os.system(command)
 
         if os.path.isfile(self.reportFilename):
             reportFile = open(self.reportFilename, 'r')
