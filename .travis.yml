@@ -30,6 +30,7 @@ addons:
   homebrew:
     packages:
       - clang-format
+      - cppcheck
       - python
 script:
   - python -m unittest discover -s tests/sources
