@@ -1,6 +1,5 @@
 dist:
   - xenial
-  - windows
 git:
   depth: 3
   submodules: false
@@ -11,6 +10,8 @@ python:
 matrix:  # macos can't be listed in 'os' as we need to set 'generic' as language (because travis doesn't support python on macos for now)
   include:
     - os: osx
+      language: generic
+    - os: windows
       language: generic
 cache: pip
 install:
