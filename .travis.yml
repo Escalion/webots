@@ -16,6 +16,7 @@ matrix:  # macos can't be listed in 'os' as we need to set 'generic' as language
       python: "3.7"
       before_install:
         - choco install python3
+        - choco install cppcheck
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
         - python -m pip install --upgrade pip wheel
 cache: pip
