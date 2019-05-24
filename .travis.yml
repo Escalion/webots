@@ -17,6 +17,7 @@ matrix:  # macos can't be listed in 'os' as we need to set 'generic' as language
       before_install:
         - choco install python3
         - choco install cppcheck
+        - choco install -y msys2
         - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
         - python -m pip install --upgrade pip wheel
 cache: pip
@@ -33,5 +34,6 @@ addons:
       - cppcheck
       - python
 script:
+  - C:\tools\msys64\usr\bin\bash -lc ls
   - python -m unittest discover -s tests/sources
   - python -m unittest discover -s docs/tests
