@@ -18,6 +18,7 @@ matrix:  # macos can't be listed in 'os' as we need to set 'generic' as language
         - travis_wait 45 choco install -y msys2
         - travis_wait 45 choco install -y python
         - travis_wait 45 choco install -y cppcheck
+        - travis_wait 45 choco install -y pip 
 cache: pip
 install:
   - pip install -r tests/sources/requirements.txt
