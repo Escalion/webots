@@ -84,5 +84,5 @@ script:
 #  - python -m unittest discover -s tests/sources
 #  - python -m unittest discover -s docs/tests
   - export QT_QPA_PLATFORM=offscreen
-  - make distrib -j2
+  - travis_wait 45 make distrib -j2
   - ./webots --sysinfo
